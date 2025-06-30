@@ -1,4 +1,9 @@
 # @elysiajs/swagger
+
+> [!caution]
+> I, gdar463, only changed a bit of the code, which i publish under [MIT License](LICENSE)
+> If you want an up-to-date version, use the official package, not this one
+
 Plugin for [elysia](https://github.com/elysiajs/elysia) to auto-generate Swagger page.
 
 ## Installation
