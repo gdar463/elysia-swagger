@@ -8,7 +8,7 @@ interface XTagGroup {
 }
 
 interface ScalarDocument extends Omit<Partial<OpenAPIV3.Document>, "x-express-openapi-additional-middleware" | "x-express-openapi-validation-strict"> {
-  "x-tag-groups": XTagGroup[]
+  "x-tagGroups": XTagGroup[]
 }
 
 export interface ElysiaSwaggerConfig<Path extends string = '/swagger'> {
