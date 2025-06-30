@@ -2,18 +2,23 @@ import type { OpenAPIV3 } from 'openapi-types'
 import type { ReferenceConfiguration } from '@scalar/types'
 import type { SwaggerUIOptions } from './swagger/types'
 
+interface XTagGroup {
+  name: string,
+  tags: string[]
+}
+
+interface ScalarDocument extends Omit<Partial<OpenAPIV3.Document>, "x-express-openapi-additional-middleware" | "x-express-openapi-validation-strict"> {
+  "x-tag-groups": XTagGroup[]
+}
+
 export interface ElysiaSwaggerConfig<Path extends string = '/swagger'> {
 	/**
 	 * Customize Swagger config, refers to Swagger 2.0 config
 	 *
 	 * @see https://swagger.io/specification/v2/
 	 */
-	documentation?: Omit<
-		Partial<OpenAPIV3.Document>,
-		| 'x-express-openapi-additional-middleware'
-		| 'x-express-openapi-validation-strict'
-	>
-	/**
+	documentation?: Partial<ScalarDocument>
+  /**
 	 * Choose your provider, Scalar or Swagger UI
 	 *
 	 * @default 'scalar'
